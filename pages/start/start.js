@@ -9,7 +9,7 @@ Page({
     swiperCurrent: 0,
     height: wx.getSystemInfoSync().windowHeight
   },
-  onLoad:function(){
+  onLoad: function () {
     const _this = this
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('mallName')
@@ -33,6 +33,7 @@ Page({
             banners: res.data,
             swiperMaxNumber: res.data.length
           });
+          throw new Error('something wrong');
         }
       }).catch(function (e) {
         wx.switchTab({
@@ -41,8 +42,8 @@ Page({
       })
     }
   },
-  onShow:function(){
-    
+  onShow: function () {
+
   },
   swiperchange: function (e) {
     //console.log(e.detail.current)
